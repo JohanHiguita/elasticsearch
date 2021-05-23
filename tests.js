@@ -9,8 +9,24 @@ const print = (data) => {
 /************************ tests *********************/
 
 Elastic
-    .getDocumentById("109487", "movies")
+    .deleteById("109487", "movies")
     .then(resp => print(resp.data));
+ 
+ 
+
+/*const data = {
+    "doc":{
+        "title": "Movie Johan"
+    }
+}
+
+Elastic
+    .updatePartial("109487", "movies", data)
+    .then(resp => print(resp.data)); */
+
+/* Elastic
+    .getDocumentById("109487", "movies")
+    .then(resp => print(resp.data)); */
 
 /*const doc = {
     "genre" : ["IMAX", "Action"],

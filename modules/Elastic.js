@@ -53,10 +53,29 @@ class Elastic {
     }
   };
 
+  static updatePartial = (id, index, data) => {
+    try {
+      const response = axios.post(`${baseURL}/${index}/_doc/${id}/_update`, data);
+      return response;
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
   //Update all document fields (specify every existing field)
   static getDocumentById = (id, index) => {
     try {
       const response = axios.get(`${baseURL}/${index}/_doc/${id}?pretty`);
+      return response;
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  //Update all document fields (specify every existing field)
+  static deleteById = (id, index) => {
+    try {
+      const response = axios.delete(`${baseURL}/${index}/_doc/${id}`);
       return response;
     } catch (error) {
       console.error(error);
