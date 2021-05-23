@@ -1,0 +1,25 @@
+{
+  "name": "elasticsearch",
+  "version": "1.0.0",
+  "description": "testing elasticsearch",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JohanHiguita/elasticsearch.git"
+  },
+  "keywords": [
+    "elasticsearch"
+  ],
+  "author": "Johan Higuita",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JohanHiguita/elasticsearch/issues"
+  },
+  "homepage": "https://github.com/JohanHiguita/elasticsearch#readme",
+  "dependencies": {
+    "axios": "^0.21.1"
+  }
+}
