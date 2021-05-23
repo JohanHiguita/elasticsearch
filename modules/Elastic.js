@@ -25,6 +25,28 @@ class Elastic {
   static getAllDocuments = (index) => {
     try {
       const response = axios.get(`${baseURL}/${index}/_search?pretty`);
+      //console.log("here!!!!!!!!!!!!!!!!!!!");
+      return response;
+    } catch (error) {
+      console.error(error);
+      console.log("Error!!!");
+    }
+  };
+
+  // json Bulk import (multiinsert)
+  static insertBulk = (data) => {
+    try {
+      const response = axios.put(`${baseURL}/_bulk?pretty`, data);
+      return response;
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  //Update all document fields (specify every existing field)
+  static updateTotal = (id, data) => {
+    try {
+      const response = axios.put(`${baseURL}/movies/_doc/${id}?pretty`, data);
       return response;
     } catch (error) {
       console.error(error);
