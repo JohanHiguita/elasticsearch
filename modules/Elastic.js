@@ -44,9 +44,19 @@ class Elastic {
   };
 
   //Update all document fields (specify every existing field)
-  static updateTotal = (id, data) => {
+  static updateTotal = (id, index, data) => {
     try {
-      const response = axios.put(`${baseURL}/movies/_doc/${id}?pretty`, data);
+      const response = axios.put(`${baseURL}/${index}/_doc/${id}?pretty`, data);
+      return response;
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  //Update all document fields (specify every existing field)
+  static getDocumentById = (id, index) => {
+    try {
+      const response = axios.get(`${baseURL}/${index}/_doc/${id}?pretty`);
       return response;
     } catch (error) {
       console.error(error);
