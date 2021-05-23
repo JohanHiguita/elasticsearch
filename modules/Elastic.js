@@ -20,6 +20,16 @@ class Elastic {
       console.error(error);
     }
   };
+
+  // Get all documents
+  static getAllDocuments = (index) => {
+    try {
+      const response = axios.get(`${baseURL}/${index}/_search?pretty`);
+      return response;
+    } catch (error) {
+      console.error(error);
+    }
+  };
 }
 
 module.exports = Elastic;
